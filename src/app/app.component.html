@@ -1,0 +1,22 @@
+<nav>
+	<div class="nav-wrapper">
+		<a href="#" class="brand-logo">Logo</a>
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a [routerLink]="['']">Home</a></li>
+			<li><a [routerLink]="['about']">About</a></li>
+		</ul>
+	</div>
+</nav>
+<header>
+</header>
+<main>
+	<h1>Hello from {{title}}!</h1>
+
+	<!-- Images (and assets) are parsed and loaded from within the public directory -->
+	<img src="/img/angular.png">
+
+	<router-outlet></router-outlet>
+</main>
+<footer>
+	<a [href]="url">Webpack Angular 2 Starter</a>
+</footer>
