@@ -7,10 +7,10 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 	styleUrls: ['./elementStatusList.component.scss']
 })
 export class ElementStatusListComponent implements OnInit {
-	items: FirebaseListObservable<any[]>;
+	dataSources: FirebaseListObservable<any[]>;
 
 	constructor(af: AngularFire) {
-		this.items = af.database.list('/dataSources');
+		this.dataSources = af.database.list('/dataSources');
 	}
 
 	ngOnInit() {

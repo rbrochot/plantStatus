@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
@@ -7,18 +7,23 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 	styleUrls: ['./elementStatus.component.scss']
 })
 export class ElementStatusComponent implements OnInit {
-	items: FirebaseListObservable<any[]>;
+	@Input()
+	dataSourceId: String;
+
+	dataPoints: FirebaseListObservable<any[]>;
+	af: AngularFire;
 
 	constructor(af: AngularFire) {
-		this.items = af.database.list('/data', {
-			query: {
-				orderByChild: 'dataSourceId',
-				equalTo: '1'
-			}
-		});
+		this.af = af;
 	}
 
 	ngOnInit() {
+		this.dataPoints = this.af.database.list('/data', {
+			query: {
+				orderByChild: 'dataSourceId',
+				equalTo: this.dataSourceId
+			}
+		});
 	}
 
 }

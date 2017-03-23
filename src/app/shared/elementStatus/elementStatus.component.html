@@ -1,5 +1,5 @@
 <ul>
-	<li class="text" *ngFor="let item of items | async">
-		{{ item.dateTime | date }} : {{ item.value }}
+	<li class="text" *ngFor="let dataPoint of dataPoints | async">
+		{{ dataPoint.dateTime | date }} : {{ dataPoint.value }}
 	</li>
 </ul>

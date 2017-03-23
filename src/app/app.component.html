@@ -10,13 +10,10 @@
 <header>
 </header>
 <main>
-	<h1>Hello from {{title}}!</h1>
-
-	<!-- Images (and assets) are parsed and loaded from within the public directory -->
-	<img src="/img/angular.png">
-
 	<router-outlet></router-outlet>
 </main>
-<footer>
-	<a [href]="url">Webpack Angular 2 Starter</a>
+<footer class="page-footer">
+	<div class="container">
+		<a class="grey-text text-lighten-4" [href]="url">Webpack Angular 2 Starter</a>
+	</div>
 </footer>
