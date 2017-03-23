@@ -6,6 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+
+import { AgentListComponent } from './shared/agentList/agentList.component';
+import { ElementStatusListComponent } from './shared/elementStatusList/elementStatusList.component';
+import { ElementStatusComponent } from './shared/elementStatus/elementStatus.component';
+
 import { ApiService } from './shared';
 import { routing } from './app.routing';
 
@@ -32,7 +37,10 @@ export const firebaseConfig = {
 	declarations: [
 		AppComponent,
 		HomeComponent,
-		AboutComponent
+		AboutComponent,
+		AgentListComponent,
+		ElementStatusListComponent,
+		ElementStatusComponent,
 	],
 	providers: [
 		ApiService
