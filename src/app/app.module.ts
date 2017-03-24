@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { OverviewComponent } from './overview/overview.component';
 import { AboutComponent } from './about/about.component';
 
 import { AgentListComponent } from './shared/agentList/agentList.component';
@@ -12,6 +13,7 @@ import { ElementStatusListComponent } from './shared/elementStatusList/elementSt
 import { ElementStatusComponent } from './shared/elementStatus/elementStatus.component';
 
 import { ApiService } from './shared';
+import { LoginGuard } from './routing/loginGuard/loginGuard.service';
 import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
@@ -43,13 +45,15 @@ const firebaseAuthConfig = {
 	declarations: [
 		AppComponent,
 		HomeComponent,
+		OverviewComponent,
 		AboutComponent,
 		AgentListComponent,
 		ElementStatusListComponent,
 		ElementStatusComponent,
 	],
 	providers: [
-		ApiService
+		ApiService,
+		LoginGuard
 	],
 	bootstrap: [AppComponent]
 })

@@ -1,22 +1,24 @@
 <nav>
-	<div class="nav-wrapper">
-		<a href="#" class="brand-logo">Logo</a>
+	<div class="nav-wrapper green darken-1">
+		<a href="#" class="brand-logo">Plant status</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a [routerLink]="['']">Home</a></li>
+			<li *ngIf="af.auth | async"><a [routerLink]="['overview']">Overview</a></li>
 			<li><a [routerLink]="['about']">About</a></li>
-			<li><a (click)="login()">Login</a></li>
-			<li><a (click)="logout()">Logout</a></li>
+			<li *ngIf="!(af.auth | async)"><a (click)="login()">Login</a></li>
+			<li *ngIf="af.auth | async"><a (click)="logout()">Logout</a></li>
 		</ul>
 	</div>
 </nav>
 <header>
 </header>
 <main>
-	<router-outlet></router-outlet>
-</main>
-<footer class="page-footer">
 	<div class="container">
-		<div> {{ (af.auth | async)?.uid }} </div>
+		<router-outlet></router-outlet>
+	</div>
+</main>
+<!-- <footer class="page-footer green darken-1">
+	<div class="container">
 		<a class="grey-text text-lighten-4" [href]="url">Webpack Angular 2 Starter</a>
 	</div>
-</footer>
+</footer> -->

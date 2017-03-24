@@ -6,7 +6,7 @@ import { AngularFire } from 'angularfire2';
 import '../style/app.scss';
 
 @Component({
-	selector: 'my-app', // <my-app></my-app>
+	selector: 'my-app',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
 })
@@ -16,7 +16,6 @@ export class AppComponent {
 
 	constructor(private api: ApiService, public af: AngularFire) {
 		this.title = this.api.title;
-		this.af = af;
 	}
 
 	login () {
