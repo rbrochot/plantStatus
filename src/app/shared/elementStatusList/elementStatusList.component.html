@@ -1,6 +1,5 @@
 <ul>
 	<li class="text" *ngFor="let dataSource of (dataSources | async)">
-		{{ dataSource.name }} : {{ dataSource.$key }}
-		<my-element-status [dataSourceId]="dataSource.$key"></my-element-status>
+		<my-element-status [dataSource]="dataSource"></my-element-status>
 	</li>
 </ul>

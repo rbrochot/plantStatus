@@ -4,6 +4,8 @@
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a [routerLink]="['']">Home</a></li>
 			<li><a [routerLink]="['about']">About</a></li>
+			<li><a (click)="login()">Login</a></li>
+			<li><a (click)="logout()">Logout</a></li>
 		</ul>
 	</div>
 </nav>
@@ -14,6 +16,7 @@
 </main>
 <footer class="page-footer">
 	<div class="container">
+		<div> {{ (af.auth | async)?.uid }} </div>
 		<a class="grey-text text-lighten-4" [href]="url">Webpack Angular 2 Starter</a>
 	</div>
 </footer>

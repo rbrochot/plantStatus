@@ -1,3 +1,4 @@
+import { DataSource } from '../models/dataSource.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
@@ -8,7 +9,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class ElementStatusComponent implements OnInit {
 	@Input()
-	dataSourceId: String;
+	dataSource: DataSource;
 
 	dataPoints: FirebaseListObservable<any[]>;
 	af: AngularFire;
@@ -18,10 +19,11 @@ export class ElementStatusComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		console.log(this.dataSource);
 		this.dataPoints = this.af.database.list('/data', {
 			query: {
 				orderByChild: 'dataSourceId',
-				equalTo: this.dataSourceId
+				equalTo: this.dataSource.$key
 			}
 		});
 	}

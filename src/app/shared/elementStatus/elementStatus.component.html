@@ -1,5 +1,8 @@
-<ul>
-	<li class="text" *ngFor="let dataPoint of dataPoints | async">
-		{{ dataPoint.dateTime | date }} : {{ dataPoint.value }}
-	</li>
-</ul>
+<div class="card">
+	[{{ dataSource.$key }}] {{ dataSource.name }}
+	<ul>
+		<li class="text" *ngFor="let dataPoint of dataPoints | async">
+			{{ dataPoint.dateTime | date }} : {{ dataPoint.value }}
+		</li>
+	</ul>
+</div>

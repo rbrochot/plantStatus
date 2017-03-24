@@ -16,18 +16,24 @@ import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
-export const firebaseConfig = {
+const firebaseConfig = {
 	apiKey: 'AIzaSyBZ8HmZo2L0tSC43VaLnepOpaGrN__uUTw',
-	authDomain: 'https://plant-status.firebaseio.com/',
-	databaseURL: 'https://plant-status.firebaseio.com/',
-	messagingSenderId: 'plantsStatusApp'
+	authDomain: 'plant-status.firebaseapp.com',
+	databaseURL: 'https://plant-status.firebaseio.com',
+	storageBucket: 'plant-status.appspot.com',
+	messagingSenderId: '395812815522'
+};
+
+const firebaseAuthConfig = {
+	provider: AuthProviders.Google,
+	method: AuthMethods.Popup
 };
 
 @NgModule({
 	imports: [
-		AngularFireModule.initializeApp(firebaseConfig),
+		AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
 		BrowserModule,
 		BrowserModule,
 		HttpModule,
