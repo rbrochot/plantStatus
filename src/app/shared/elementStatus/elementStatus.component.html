@@ -1,8 +1,7 @@
-<div class="card">
-	[{{ dataSource.$key }}] {{ dataSource.name }}
-	<ul>
-		<li class="text" *ngFor="let dataPoint of dataPoints | async">
-			{{ dataPoint.dateTime | date }} : {{ dataPoint.value }}
-		</li>
-	</ul>
+<div>
+	<div class="title">
+		<i class="fa fa-lg {{dataSource.icon}}" [ngClass]="statusColorClass"></i>
+		[{{ dataSource.$key }}] {{ dataSource.name }}
+	</div>
+	<div *ngIf="lastDataPoint">{{ lastDataPoint.dateTime | date }} : {{ lastDataPoint.value }}</div>
 </div>
