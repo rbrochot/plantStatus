@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { OverviewComponent } from './overview/overview.component';
+import { DetailComponent } from './detail/detail.component';
 import { AboutComponent } from './about/about.component';
 
 import { AgentListComponent } from './shared/agentList/agentList.component';
@@ -46,6 +47,7 @@ const firebaseAuthConfig = {
 		AppComponent,
 		HomeComponent,
 		OverviewComponent,
+		DetailComponent,
 		AboutComponent,
 		AgentListComponent,
 		ElementStatusListComponent,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularFire } from 'angularfire2';
 
 @Component({
 	selector: 'my-home',
@@ -7,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-	constructor() {
+	constructor(private af: AngularFire, private router: Router) {
 	}
 
 	ngOnInit() {
+		this.af.auth.subscribe(auth => {
+			if (auth != null) {
+				this.router.navigate(['/dashboard']);
+			}
+		});
 	}
-
 }

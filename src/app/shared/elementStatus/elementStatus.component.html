@@ -1,7 +1,8 @@
 <div>
 	<div class="title">
-		<i class="fa fa-lg {{dataSource.icon}}" [ngClass]="statusColorClass"></i>
+		<i class="status-icon fa fa-2x {{dataSource.icon}}" [ngClass]="statusColorClass"></i>
 		[{{ dataSource.$key }}] {{ dataSource.name }}
 	</div>
 	<div *ngIf="lastDataPoint">{{ lastDataPoint.dateTime | date }} : {{ lastDataPoint.value }}</div>
+	<a [routerLink]="['/detail/'+ dataSource.$key]" class="secondary-content"><i class="fa fa-2x fa-line-chart"></i></a>
 </div>

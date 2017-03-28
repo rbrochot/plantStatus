@@ -1,4 +1,12 @@
 // component styles are encapsulated and only applied to their components
-* {
-  // color: #FFEF00;
+.status-icon {
+	position: absolute;
+	width: 42px;
+	height: 42px;
+	overflow: hidden;
+	left: 15px;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 42px;
 }
