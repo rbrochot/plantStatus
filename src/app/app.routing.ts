@@ -9,7 +9,7 @@ import { LoginGuard } from './routing/loginGuard/loginGuard.service';
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
 	{ path: 'dashboard', component: OverviewComponent, canActivate: [LoginGuard] },
-	{ path: 'detail', component: DetailComponent, canActivate: [LoginGuard] },
+	{ path: 'detail/:id', component: DetailComponent, canActivate: [LoginGuard] },
 	{ path: 'about', component: AboutComponent}
 ];
 

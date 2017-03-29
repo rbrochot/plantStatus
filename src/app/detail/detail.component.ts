@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
 	selector: 'my-detail',
@@ -6,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+	dataSourceId: String;
 
-	constructor() {
-	}
+	constructor(
+		private route: ActivatedRoute
+	) {}
 
 	ngOnInit() {
-		console.log('Hello Detail');
+		this.route.params
+			.switchMap((params: Params) => params['id'])
+			.subscribe(id => this.dataSourceId = id.toString());
+			// .subscribe(hero => this.hero = hero);
 	}
 
 }
