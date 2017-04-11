@@ -1,4 +1,11 @@
-// component styles are encapsulated and only applied to their components
-* {
-  // color: #FFEF00;
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-image: url(img/stockImageBg.jpg);
+	background-size: cover;
+	right: 0;
+	bottom: 0;
+	opacity: 0.5;
+	z-index: -1;
 }
