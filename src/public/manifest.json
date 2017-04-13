@@ -1,0 +1,12 @@
+{
+  "short_name": "PlantStatus",
+  "name": "Plant status",
+  "icons": [
+    {
+      "src": "img/icons/icon200.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html?launcher=true"
+}
