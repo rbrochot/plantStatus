@@ -1,12 +1,15 @@
 {
-  "short_name": "PlantStatus",
+  "short_name": "Plant status",
   "name": "Plant status",
+  "start_url": "/?launcher=true",
+  "display": "standalone",
+  "background_color": "#43a047",
+  "theme_color": "#43a047",
   "icons": [
     {
       "src": "img/icons/icon200.png",
       "type": "image/png",
       "sizes": "192x192"
     }
-  ],
-  "start_url": "index.html?launcher=true"
+  ]
 }
