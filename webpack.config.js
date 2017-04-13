@@ -8,6 +8,7 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ProvidePlugin = require('webpack/lib/ProvidePlugin');
 
 /**
  * Env
@@ -127,7 +128,26 @@ module.exports = function makeWebpackConfig() {
 
       // support for .html as raw text
       // todo: change the loader to something that adds a hash to images
-      {test: /\.html$/, loader: 'raw-loader',  exclude: root('src', 'public')}
+      {test: /\.html$/, loader: 'raw-loader',  exclude: root('src', 'public')},
+
+      {
+         test: require.resolve('jquery'),
+         use: [
+           {
+             loader: 'expose-loader',
+             options: 'jQuery'
+           },
+           {
+             loader: 'expose-loader',
+             options: '$'
+           },
+           {
+             loader: 'expose-loader',
+             options: 'window.jQuery'
+           }
+         ]
+      }
+
     ]
   };
 

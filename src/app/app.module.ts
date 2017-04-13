@@ -21,6 +21,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
+import { MaterializeModule } from 'angular2-materialize';
+
 const firebaseConfig = {
 	apiKey: 'AIzaSyBZ8HmZo2L0tSC43VaLnepOpaGrN__uUTw',
 	authDomain: 'plant-status.firebaseapp.com',
@@ -41,6 +43,7 @@ const firebaseAuthConfig = {
 		BrowserModule,
 		HttpModule,
 		FormsModule,
+		MaterializeModule,
 		routing
 	],
 	declarations: [

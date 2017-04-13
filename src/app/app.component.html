@@ -1,7 +1,21 @@
 <nav>
 	<div class="nav-wrapper green darken-1">
 		<a href="#" class="brand-logo"><i class="fa fa-leaf"></i>Plant status</a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
+		<a data-activates="sidenav-menu" class="button-collapse" materialize="sideNav"
+			[materializeParams]="[{menuWidth: 300,edge: 'left', closeOnClick: true, draggable: true}]">
+				<i class="fa fa-2x fa-bars"></i>
+		</a>
+		<ul id="navbar-menu" class="right hide-on-med-and-down">
+			<li *ngIf="!(af.auth | async)"><a [routerLink]="['']">Home</a></li>
+			<li *ngIf="af.auth | async"><a [routerLink]="['dashboard']">Dashboard</a></li>
+			<li><a [routerLink]="['about']">About</a></li>
+			<li *ngIf="!(af.auth | async)"><a (click)="login()">Login</a></li>
+			<li *ngIf="af.auth | async"><a (click)="logout()">Logout</a></li>
+		</ul>
+		<ul id="sidenav-menu" class="side-nav">
+			<li><div class="userView">
+				<a href="#!user"><img class="circle" src="img/stockImageBg.jpg"></a>
+			</div></li>
 			<li *ngIf="!(af.auth | async)"><a [routerLink]="['']">Home</a></li>
 			<li *ngIf="af.auth | async"><a [routerLink]="['dashboard']">Dashboard</a></li>
 			<li><a [routerLink]="['about']">About</a></li>
@@ -10,6 +24,7 @@
 		</ul>
 	</div>
 </nav>
+
 <main>
 	<router-outlet></router-outlet>
 </main>

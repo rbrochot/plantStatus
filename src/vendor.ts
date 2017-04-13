@@ -14,6 +14,7 @@ import '@angularclass/hmr';
 
 import 'firebase';
 import 'angularfire2';
+import 'jquery';
 import 'materialize-css/dist/js/materialize.js';
 import 'materialize-css/dist/css/materialize.css';
 import 'font-awesome/css/font-awesome.css';
