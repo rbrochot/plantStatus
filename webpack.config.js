@@ -9,6 +9,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ProvidePlugin = require('webpack/lib/ProvidePlugin');
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 /**
  * Env
@@ -223,6 +224,16 @@ module.exports = function makeWebpackConfig() {
           })
         ]
       }
+    }),
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'plant-status',
+      filename: 'plant-status-service-worker.js',
+      maximumFileSizeToCacheInBytes: 4194304,
+      minify: true,
+      runtimeCaching: [{
+        handler: 'networkFirst',
+        urlPattern: /^https:\/\/plant-status.firebaseio.com/,
+      }],
     })
   ];
 

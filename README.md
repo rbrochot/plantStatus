@@ -2,6 +2,7 @@
 
 
 #TODO
+ - Test firebase rest api and get date with postman
  - make it installable https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android
  - Detail: add graphs
  - Add dataPoints datetime, use moment.js
